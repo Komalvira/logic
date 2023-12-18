@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+    <head>
+        <title>All logic Task</title>
+        <style>
+            *{
+                margin: 0%;
+                padding: 5px;
+            
+            }
+            #box{
+                    background-color: blueviolet;
+                      height: 220;
+                      width: 500px;
+                      
+            }
+        </style>
+        <script>
+            function check_Prime(){
+                let status=document.getElementById('status')
+                var num=parseInt(t.value);
+                var num1=parseInt(num/2);
+                for(var i=2;i<=num1;i++){
+                    var f=0;
+                    if(num%i==0){
+                     f=1;
+                     break;
+                }
+            }
+             
+            if(f==0)
+            //document.write(t.value+ "is Prime number");
+            status.innerHTML="This is Prime number";
+            else
+            status.innerHTML="This is not Prime number";
+        }
+        function check_Palindrom(){
+            let status=document.getElementById('status')
+                var num=parseInt(t.value);
+                var n=num;
+                var sum=0,r;
+                while(n>0)
+                {
+                       r=n%10;
+                       n=parseInt(n/10);
+                       sum=sum*10+r;
+                }
+              if(sum==num)
+            status.innerHTML="This is Palindrome number";
+            else
+            status.innerHTML="This is not Palindrome number";
+        }
+
+        function check_Spy(){
+            let status=document.getElementById('status')
+            var num=parseInt(t.value);
+            
+                var sum=0,product=1,r;
+                while(num>0)
+                {
+                       r=num%10;
+                       num=parseInt(num/10);
+                       sum=sum+r;
+                       product=product*r;
+                }
+              if(sum==product)
+              status.innerHTML="This is SPY number";
+            else
+            status.innerHTML="This is SPY number";
+        }
+        function check_Buzz(){
+            let status=document.getElementById('status')
+            var num=parseInt(t.value);
+            if(num%10==7||num%7==0)
+            status.innerHTML="This is Buzz number";
+            else
+            status.innerHTML="This is not Buzz number";
+        }
+        function check_Special(){
+            let status=document.getElementById('status')
+            var num=parseInt(t.value);
+            var temp=num;
+            var sum=0;
+            while(num>0){
+                var n1=num%10;
+                num=parseInt(num/10)
+                var f=1;
+            for(var i=n1;i>0;i--){
+                f=f*i;
+            }
+            sum=sum+f;
+        }
+        if(sum==temp)
+        status.innerHTML="This is Specail number";
+        else
+        status.innerHTML="This is not Specail number";
+
+    }
+    function find_Reverse(){
+        let status=document.getElementById('status')
+        var num=parseInt(t.value);
+                var n=num;
+                var rev=0,r;
+                while(n>0)
+                {
+                       r=n%10;
+                       n=parseInt(n/10);
+                       rev=rev*10+r;
+                }
+               document.write(t.value+ " Reverse number="+rev);
+        }
+        function check_Harshad(){
+            let status=document.getElementById('status')
+            var num=parseInt(t.value);
+                var n=num;
+                var sum=0,r;
+                while(n>0)
+                {
+                       r=n%10;
+                       n=parseInt(n/10);
+                       sum=sum+r;
+                }
+                if(num%sum==0)
+                status.innerHTML="This is Harshad number";
+               else
+               status.innerHTML="This is not Harshad number";
+        }
+        function check_Magic(){
+            let status=document.getElementById('status')
+            var num=parseInt(t.value);
+                var n=num;
+                var sum=0,r;
+                while(n>0)
+                {
+                       r=n%10;
+                       n=parseInt(n/10);
+                       sum=sum+r;
+                }
+                var n1=sum;
+                var rev=0,tmp;
+                while(sum>0)
+                {
+                    tmp=sum%10;
+                    sum=parseInt(sum/10);
+                    rev=rev*10+tmp;
+                }
+                if((n1*rev)==num)
+                status.innerHTML="This is Magic number";
+               else
+               status.innerHTML="This is not Magic number";
+        }
+        </script>
+    </head>
+    <body>
+        <center>
+        <div id="box">
+
+            <h3>Logic check</h3>
+        Enter a number:<input type="text" name="t" id="t"/><br>
+        <input type="button" value="Prime" onClick="check_Prime()"/>
+        <input type="button" value="Palindrome" onClick="check_Palindrom()"/>
+        <input type="button" value="Spy" onClick="check_Spy()"/>
+        <input type="button" value="buzz" onClick="check_Buzz()"/>
+        <input type="button" value="Special" onClick="check_Special()"/>
+        <input type="button" value="Reverse" onClick="find_Reverse()"/>
+        <input type="button" value="Harshad" onClick="check_Harshad()"/>
+        <input type="button" value="Magic" onClick="check_Magic()"/>
+       
+    </div>
+    <div id="status" style="color:#FF0000;"></div>
+</center>
+    </body>
+
+</html>
